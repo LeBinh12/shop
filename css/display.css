@@ -1,0 +1,28 @@
+.container{
+    padding: 10px 10%;
+    
+}
+
+
+
+
+.menu-thongtin{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-img{
+        display: grid;
+}
+
+
+.menu-img a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+

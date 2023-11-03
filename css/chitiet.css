@@ -1,0 +1,17 @@
+.main-chitiet{
+    padding: 0px 10%;
+    display: flex;
+}
+
+.main-chitiet-img img{
+    width: 100%;
+}
+
+.main-chitiet-thongtin{
+    border: 1px solid #111;
+    border-radius: 5px;
+}
+
+.main-chitiet-thongtin p{
+    font-size: 20px;
+}

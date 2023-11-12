@@ -4,7 +4,7 @@
         $phone=$_POST['phone'];
         $address=$_POST['address'];
         $uid=$_COOKIE['uid'];
-        $masp=$_POST['id'];
+        $masp=$_POST['masp'];
         $id_donhang=rand(0,10000000);
 
         $sql="insert into order_us (id_order,name, phone, address,total,uid,masp) values ('$id_donhang','$name', '$phone', '$address',20000,'$uid','$masp')"; 

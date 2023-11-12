@@ -10,7 +10,7 @@ if(isset($_GET["idct"])){
             $data= getProductDetail($id,$conn);
             for ($i=0;$i<count($data);$i++){
                 ?>
-                <form action="index.php?page=page/hang/giohang.php&_COOKIE['uid']" method="post">
+                <form action="" method="post">
                 <div class="main-chitiet-img">  
                     <img src="image/<?php echo $data[$i]["image"] ?>" alt="">
                 </div>
@@ -19,11 +19,11 @@ if(isset($_GET["idct"])){
                     <p><?php echo $data[$i]["description"] ?></p>
                     <h3><?php echo $data[$i]["price"] ?>$</h3>
                     <div class="main-chitiet-button">
-                    <input type="hidden" name="id" value="<?php echo $data[$i]["id"]?>">
+                    <input type="hidden" name="idsanpham" value="<?php echo $data[$i]["id"]?>">
                     <input type="hidden" name="img" value="image/<?php echo $data[$i]["image"] ?>">
                 <input type="hidden" name="brand" value="<?php echo $data[$i]["brand"] ?>">
                 
-                
+                    
                 Số lượng:<input  type="number" style="width:7%;text-align:center" id="soluong" name="soluong" min="1" max="100" value="1">
 
                     <input type="submit" class="btn btn-success" name="giohang" value="Them Gio Hang"></input>
@@ -31,7 +31,8 @@ if(isset($_GET["idct"])){
                 
 
                 </form>
-                <form action="index.php?page=page/form/form.php" method="post">
+                
+                <form action="index.php?page=page/hang/dathang.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $data[$i]["id"] ?>">
 
                 <input type="submit" class="btn btn-danger" name="dathang" value="Dat Hang"></input>
@@ -39,5 +40,16 @@ if(isset($_GET["idct"])){
                 <?php
                 }
           
-    ?>
+    ?> 
 </div>
+
+<?php 
+    if(isset($_POST['giohang'])){
+        addCart($_POST, $conn);
+    }
+   
+   
+   
+    
+?>
+

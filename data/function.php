@@ -65,3 +65,49 @@ function getProduct($id, $conn)
     }
     return $data;
 }
+
+
+function addCart($post,$conn)
+{
+    echo $post['idsanpham'];
+        $id = $post['idsanpham'];
+        $quantity = $post['soluong'];
+        $uid = $_COOKIE['uid'];
+        
+        $sql = "Select *from giohang where giohang.uid='$uid' and giohang.masp='$id'";
+        $r = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($r) <=0 ) {
+           
+            $sql = "Insert into giohang (uid,masp,quantity) values ('$uid','$id','$quantity')";
+            $conn->query($sql);
+            header("location:/new/index.php?page=page/hang/giohang.php");
+            
+        } else {
+        while ($re=mysqli_fetch_array($r)) {
+                
+            $sl=$re['quantity']+$quantity;
+            
+            $sql = "Update giohang set quantity=$sl where giohang.uid='$uid' and giohang.masp='$id'";
+           mysqli_query($conn, $sql);
+            header("location:/new/index.php?page=page/hang/giohang.php");
+        }
+        }
+
+
+
+}
+    
+
+function getCart($uid,$conn){
+    $sql="Select * from giohang inner join cars on giohang.masp like cars.id where giohang.uid = '$uid' order by giohang.id_giohang DESC";
+    $r=mysqli_query($conn,$sql);
+    $data=array();
+    if(mysqli_num_rows($r)>0){
+        while($row=mysqli_fetch_array($r)){
+            $data[]=$row;
+        }
+        return $data;
+
+}
+
+}

@@ -1,5 +1,52 @@
 .giohang{
-    display: flex;
-    flex-direction: column-reverse;
-    padding: 5px 10%;
+    
+    margin: 5px 20%;
 }
+.giohang-hang{
+    display: flex;
+    /* flex-wrap: wrap; */
+    border: 1px solid;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    flex-direction: column;
+    background: coral;
+}
+.giohang-hinh{
+    width: 20%;
+    padding: 5px;
+    border: 1px solid;
+}
+
+.giohang-thongtin{
+    width: 60%;
+    padding: 5px;
+}
+
+.giohang-name p{
+    font-size: larger;
+}
+
+.giohang-soluong p{
+    padding: 5px;
+}
+
+/* .giohang-chucnang{
+    width: 20%;
+    padding-left: 18%;
+} */
+
+.delete {
+    background: none;
+    border: none;
+    color: red;
+    padding: 5px;
+}
+
+.giohang-gia{
+    color: red;
+    padding: 4px;
+    font-size: 25px;
+}
+
+
+

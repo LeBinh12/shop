@@ -32,11 +32,7 @@ if(isset($_GET["idct"])){
 
                 </form>
                 
-                <form action="index.php?page=page/hang/dathang.php" method="post">
-                    <input type="hidden" name="id" value="<?php echo $data[$i]["id"] ?>">
-
-                <input type="submit" class="btn btn-danger" name="dathang" value="Dat Hang"></input>
-                </form> 
+                
                 <?php
                 }
           
